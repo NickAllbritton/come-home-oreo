@@ -1,0 +1,15 @@
+[package]
+name = "oreo"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bevy = "*"
+
+# Low optimizations for local code
+[profile.dev]
+opt-level = 1 
+
+# High optimizations for dependencies
+[profile.dev.package."*"]
+opt-level = 3
