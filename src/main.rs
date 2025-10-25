@@ -94,13 +94,13 @@ fn setup(
     ));
 
     // Load the sprite sheet using the 'AssetServer'
-    let texture = asset_server.load("resources/sprites/oreo_wagging.png");
+    let texture = asset_server.load("resources/sprites/oreo_small_wagging.png");
 
     // The sprite sheet has 24 sprites arranged in 4 rows, and they are all 56px x 128px
-    let layout = TextureAtlasLayout::from_grid(UVec2::new(56, 128), 23, 1, None, None);
+    let layout = TextureAtlasLayout::from_grid(UVec2::new(56, 128), 10, 1, None, None);
     let texture_atlas_layout = texture_atlas_layouts.add(layout);
 
-    let animation_config_wag = AnimationConfig::new(1, 22, 20);
+    let animation_config_wag = AnimationConfig::new(0, 9, 15);
 
     // Create the sprite
     commands.spawn((
@@ -112,7 +112,7 @@ fn setup(
                 }),
                 ..default()
             },
-            Transform::from_scale(Vec3::splat(0.75)).with_translation(Vec3::new(0.0, 0.0, 0.0)),
+            Transform::from_scale(Vec3::splat(1.2)).with_translation(Vec3::new(0.0, -20.0, 0.0)),
             OreoWagging,
             animation_config_wag
     ));
