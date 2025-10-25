@@ -1,0 +1,41 @@
+~/software/come-home-oreo > cargo run
+   Compiling oreo v0.1.0 (/home/nick/software/come-home-oreo)
+    Finished `dev` profile [optimized + debuginfo] target(s) in 22.30s
+     Running `target/debug/oreo`
+2025-05-23T05:05:31.018944Z  INFO bevy_diagnostic::system_information_diagnostics_plugin::internal: SystemInfo { os: "Linux (Gentoo 2.17)", kernel: "6.12.3-gentoo", cpu: "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz", core_count: "2", memory: "15.5 GiB" }
+2025-05-23T05:05:31.022772Z  WARN winit::platform_impl::linux::x11::xdisplay: error setting XSETTINGS; Xft options won't reload automatically
+xkbcommon: ERROR: couldn't find a Compose file for locale "C.UTF8" (mapped to "C.UTF8")
+2025-05-23T05:05:31.054669Z ERROR wgpu_hal::vulkan::instance: GENERAL [Loader Message (0x0)]
+	vkCreateInstance: Found no drivers!
+2025-05-23T05:05:31.054689Z ERROR wgpu_hal::vulkan::instance: 	objects: (type: INSTANCE, hndl: 0x55774e56f5c0, name: ?)
+2025-05-23T05:05:31.101511Z  INFO bevy_render::renderer: AdapterInfo { name: "Mesa Intel(R) HD Graphics 520 (SKL GT2)", vendor: 32902, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "4.6 (Core Profile) Mesa 25.0.2", backend: Gl }
+2025-05-23T05:05:31.272457Z  INFO bevy_render::batching::gpu_preprocessing: GPU preprocessing is fully supported on this device.
+2025-05-23T05:05:31.276924Z  WARN bevy_pbr::ssao: ScreenSpaceAmbientOcclusionPlugin not loaded. GPU lacks support: TextureFormat::R16Float does not support TextureUsages::STORAGE_BINDING.
+2025-05-23T05:05:31.278335Z  INFO bevy_winit::system: Creating new window App (0v1)
+2025-05-23T05:05:31.278406Z  INFO winit::platform_impl::linux::x11::window: Guessed window scale factor: 2.1666666666666665
+2025-05-23T05:05:31.545174Z ERROR wgpu::backend::wgpu_core: Shader translation error for stage ShaderStages(COMPUTE): WGSL `textureLoad` from depth textures is not supported in GLSL
+2025-05-23T05:05:31.545717Z ERROR wgpu::backend::wgpu_core: Please report it to https://github.com/gfx-rs/wgpu
+2025-05-23T05:05:31.545867Z ERROR wgpu::backend::wgpu_core: Handling wgpu errors as fatal by default
+
+thread 'Async Compute Task Pool (0)' panicked at /home/nick/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wgpu-24.0.3/src/backend/wgpu_core.rs:1351:26:
+wgpu error: Validation Error
+
+Caused by:
+  In Device::create_compute_pipeline, label = 'downsample depth multisample first phase pipeline'
+    Internal error: WGSL `textureLoad` from depth textures is not supported in GLSL
+
+
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+2025-05-23T05:05:31.572939Z ERROR wgpu::backend::wgpu_core: Shader translation error for stage ShaderStages(COMPUTE): WGSL `textureLoad` from depth textures is not supported in GLSL
+2025-05-23T05:05:31.572964Z ERROR wgpu::backend::wgpu_core: Please report it to https://github.com/gfx-rs/wgpu
+2025-05-23T05:05:31.572980Z ERROR wgpu::backend::wgpu_core: Handling wgpu errors as fatal by default
+
+thread 'Async Compute Task Pool (0)' panicked at /home/nick/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wgpu-24.0.3/src/backend/wgpu_core.rs:1351:26:
+wgpu error: Validation Error
+
+Caused by:
+  In Device::create_compute_pipeline, label = 'downsample depth first phase pipeline'
+    Internal error: WGSL `textureLoad` from depth textures is not supported in GLSL
+
+
+Encountered a panic in system `bevy_render::render_resource::pipeline_cache::PipelineCache::process_pipeline_queue_system`!

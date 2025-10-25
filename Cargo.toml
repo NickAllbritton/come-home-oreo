@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-bevy = "*"
+bevy = "0.17"
 
 # Low optimizations for local code
 [profile.dev]
